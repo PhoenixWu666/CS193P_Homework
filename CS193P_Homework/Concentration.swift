@@ -20,12 +20,19 @@ class Concentration {
         
         // shuffle cards
         var tempCards = [Card]()
+        let count = cards.count
         
-        for _ in 0..<numberOfPairsOfCards {
-            tempCards.append(cards[(cards.count - 1).arc4random])
+        for _ in 0..<count {
+            tempCards.append(cards.remove(at: (cards.count - 1).arc4random))
         }
         
         cards = tempCards
+    }
+    
+    func updateCardStatus(at index: Int, isFaceUp: Bool) {
+        if cards.indices.contains(index) {
+            cards[index].isFaceUp = isFaceUp
+        }
     }
     
 }

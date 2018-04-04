@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		748EFA6620746BC7004F176D /* ConcentrationTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748EFA6520746BC7004F176D /* ConcentrationTheme.swift */; };
+		748EFA6820746C2A004F176D /* ConcentrationThemeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748EFA6720746C2A004F176D /* ConcentrationThemeEnum.swift */; };
+		748EFA6A20746D5A004F176D /* ThemeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748EFA6920746D5A004F176D /* ThemeFactory.swift */; };
+		748EFA6C20746E9D004F176D /* HalloweenTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748EFA6B20746E9D004F176D /* HalloweenTheme.swift */; };
+		748EFA6E20746F92004F176D /* JapaneseTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 748EFA6D20746F92004F176D /* JapaneseTheme.swift */; };
 		74CBAB2720725E6500CA9605 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CBAB2620725E6500CA9605 /* AppDelegate.swift */; };
 		74CBAB2920725E6500CA9605 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74CBAB2820725E6500CA9605 /* ViewController.swift */; };
 		74CBAB2C20725E6500CA9605 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74CBAB2A20725E6500CA9605 /* Main.storyboard */; };
@@ -17,6 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		748EFA6520746BC7004F176D /* ConcentrationTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationTheme.swift; sourceTree = "<group>"; };
+		748EFA6720746C2A004F176D /* ConcentrationThemeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentrationThemeEnum.swift; sourceTree = "<group>"; };
+		748EFA6920746D5A004F176D /* ThemeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeFactory.swift; sourceTree = "<group>"; };
+		748EFA6B20746E9D004F176D /* HalloweenTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalloweenTheme.swift; sourceTree = "<group>"; };
+		748EFA6D20746F92004F176D /* JapaneseTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JapaneseTheme.swift; sourceTree = "<group>"; };
 		74CBAB2320725E6500CA9605 /* CS193P_Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CS193P_Homework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74CBAB2620725E6500CA9605 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74CBAB2820725E6500CA9605 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +72,11 @@
 				74CBAB2A20725E6500CA9605 /* Main.storyboard */,
 				74CBAB39207265F800CA9605 /* Concentration.swift */,
 				74CBAB3B2072667500CA9605 /* Card.swift */,
+				748EFA6520746BC7004F176D /* ConcentrationTheme.swift */,
+				748EFA6920746D5A004F176D /* ThemeFactory.swift */,
+				748EFA6720746C2A004F176D /* ConcentrationThemeEnum.swift */,
+				748EFA6B20746E9D004F176D /* HalloweenTheme.swift */,
+				748EFA6D20746F92004F176D /* JapaneseTheme.swift */,
 				74CBAB3820725EBC00CA9605 /* Supporting Files */,
 				74CBAB3220725E6500CA9605 /* Info.plist */,
 			);
@@ -150,9 +165,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				748EFA6820746C2A004F176D /* ConcentrationThemeEnum.swift in Sources */,
+				748EFA6C20746E9D004F176D /* HalloweenTheme.swift in Sources */,
 				74CBAB2920725E6500CA9605 /* ViewController.swift in Sources */,
 				74CBAB2720725E6500CA9605 /* AppDelegate.swift in Sources */,
+				748EFA6E20746F92004F176D /* JapaneseTheme.swift in Sources */,
+				748EFA6620746BC7004F176D /* ConcentrationTheme.swift in Sources */,
 				74CBAB3A207265F800CA9605 /* Concentration.swift in Sources */,
+				748EFA6A20746D5A004F176D /* ThemeFactory.swift in Sources */,
 				74CBAB3C2072667500CA9605 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

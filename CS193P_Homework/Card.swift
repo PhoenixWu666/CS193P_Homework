@@ -22,7 +22,7 @@ struct Card {
         return identifierFactory
     }
     
-    var identifier: Int
+    private(set) var identifier: Int
     
     init() {
         identifier = Card.getIdentifier()

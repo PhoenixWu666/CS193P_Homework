@@ -12,6 +12,8 @@ class Concentration {
     
     private(set) var cards = [Card]()
     
+    private var indexOfSingleFlipedCard: Int?
+    
     init(numberOfPairsOfCards: Int) {
         for _ in 0..<numberOfPairsOfCards {
             let card = Card()
@@ -29,9 +31,39 @@ class Concentration {
         cards = tempCards
     }
     
-    func updateCardStatus(at index: Int, isFaceUp: Bool) {
+    func chooseCard(at index: Int, isFaceUp: Bool) {
         if cards.indices.contains(index) {
             cards[index].isFaceUp = isFaceUp
+            
+            if isFaceUp {
+                // one card had been fliped on before
+                if let matchIndex = indexOfSingleFlipedCard, index != matchIndex {
+                    if cards[index].identifier == cards[matchIndex].identifier {
+                        // match
+                        cards[index].isMatched = true
+                        cards[matchIndex].isMatched = true
+                        indexOfSingleFlipedCard = nil
+                    } else {
+                        // mismatch
+                        cards[matchIndex].isFaceUp = false
+                        indexOfSingleFlipedCard = index
+                    }
+                } else {
+                    // only card is fliped on
+                    indexOfSingleFlipedCard = index
+                }
+            } else {
+                // flip back, so just keep previous card which is fliped on if it exists
+                var flipedOnIndex: Int? = nil
+                
+                for cardIndex in 0..<cards.count {
+                    if cards[cardIndex].isFaceUp, !cards[cardIndex].isMatched {
+                        flipedOnIndex = cardIndex
+                    }
+                }
+                
+                indexOfSingleFlipedCard = flipedOnIndex
+            }
         }
     }
     

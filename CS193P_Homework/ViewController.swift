@@ -30,10 +30,22 @@ class ViewController: UIViewController {
         if let index = cardButtons.index(of: sender) {
             if !game.cards[index].isFaceUp {
                 flipCard(cardButton: sender, backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), title: getEmoji(game.cards[index].identifier))
-                game.updateCardStatus(at: index, isFaceUp: true)
+                game.chooseCard(at: index, isFaceUp: true)
             } else {
                 flipCardBack(cardButton: sender)
-                game.updateCardStatus(at: index, isFaceUp: false)
+                game.chooseCard(at: index, isFaceUp: false)
+            }
+        }
+        
+        refreshScreen()
+    }
+    
+    private func refreshScreen() {
+        for cardButtonIndex in 0..<cardButtons.count {
+            if game.cards[cardButtonIndex].isFaceUp, game.cards[cardButtonIndex].isMatched {
+                cardButtons[cardButtonIndex].isHidden = true
+            } else if !game.cards[cardButtonIndex].isFaceUp {
+                flipCardBack(cardButton: cardButtons[cardButtonIndex])
             }
         }
     }

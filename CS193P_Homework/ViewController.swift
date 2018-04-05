@@ -22,12 +22,14 @@ class ViewController: UIViewController {
     
     var theme = ThemeFactory.getTheme(themeEnum: .Halloween)
     
+    lazy var emojiSet = theme.getEmojiSet()
+    
     var emojiDictionary = [Int : String]()
     
     @IBAction func touchCard(_ sender: UIButton) {
         if let index = cardButtons.index(of: sender) {
             if !game.cards[index].isFaceUp {
-                flipCard(cardButton: sender, backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), title: getEmoji(index))
+                flipCard(cardButton: sender, backgroundColor: #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), title: getEmoji(game.cards[index].identifier))
                 game.updateCardStatus(at: index, isFaceUp: true)
             } else {
                 flipCardBack(cardButton: sender)
@@ -45,8 +47,13 @@ class ViewController: UIViewController {
         cardButton.backgroundColor = backgroundColor
     }
     
-    func getEmoji(_ index: Int) -> String {
-        return "?"
+    func getEmoji(_ at: Int) -> String {
+        if emojiDictionary[at] == nil, emojiSet.count > 0 {
+            let index = emojiSet.index(emojiSet.startIndex, offsetBy: emojiSet.count.arc4random)
+            emojiDictionary[at] = String(emojiSet.remove(at: index))
+        }
+        
+        return emojiDictionary[at] ?? "?"
     }
     
 }

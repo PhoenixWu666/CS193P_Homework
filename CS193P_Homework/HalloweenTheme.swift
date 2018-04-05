@@ -10,7 +10,7 @@ import Foundation
 
 struct HalloweenTheme: ConcentrationTheme {
     
-    func getEmojiSet() -> String {
+    mutating func getEmojiSet() -> String {
         return "👻🎃💀😈🦇🧛🏻‍♀️🧛🏻‍♂️🧟‍♀️🧟‍♂️🧙‍♀️🧙‍♂️"
     }
     
